@@ -1,0 +1,36 @@
+package com.lychao163.dp.listen;
+
+import lombok.Data;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * @author L.yc
+ * @date 2023/9/18 16:42
+ * @since Tiger.SR
+ */
+@Data
+public class EventEntity {
+
+    private List<EventListener> listeners = new ArrayList<>();
+
+    /**
+     * 注册监听器
+     */
+    public void registerEventListener(EventListener listener) {
+        listeners.add(listener);
+    }
+
+    /**
+     * 发布动作
+     */
+    public void publishAction() {
+        System.out.println("发布动作");
+        // 创建事件对象
+        EventEntity eventEntity = new EventEntity();
+        for (EventListener listener : listeners) {
+            new Thread(() -> listener.publishEvent(eventEntity)).start();
+        }
+    }
+}
