@@ -30,7 +30,7 @@ public class EventEntity {
         // 创建事件对象
         EventEntity eventEntity = new EventEntity();
         for (EventListener listener : listeners) {
-            new Thread(() -> listener.publishEvent(eventEntity)).start();
+            listener.publishEvent(eventEntity);
         }
     }
 }
