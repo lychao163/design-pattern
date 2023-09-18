@@ -11,7 +11,7 @@ import java.util.List;
  * @since Tiger.SR
  */
 @Data
-public class EventEntity {
+public class EventSubject {
 
     private List<EventListener> listeners = new ArrayList<>();
 
@@ -28,9 +28,9 @@ public class EventEntity {
     public void publishAction() {
         System.out.println("发布动作");
         // 创建事件对象
-        EventEntity eventEntity = new EventEntity();
+        EventSubject eventSubject = new EventSubject();
         for (EventListener listener : listeners) {
-            listener.publishEvent(eventEntity);
+            listener.publishEvent(eventSubject);
         }
     }
 }

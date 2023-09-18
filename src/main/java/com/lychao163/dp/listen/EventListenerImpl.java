@@ -9,7 +9,7 @@ package com.lychao163.dp.listen;
  */
 public class EventListenerImpl implements EventListener {
     @Override
-    public void publishEvent(EventEntity e) {
+    public void publishEvent(EventSubject e) {
         System.out.println("监听到发布动作，开始做相关的事情。。。。");
     }
 }

@@ -12,5 +12,5 @@ public interface EventListener {
      * 发布事件
      * @param e EventEntity
      */
-    void publishEvent(EventEntity e);
+    void publishEvent(EventSubject e);
 }

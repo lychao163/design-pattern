@@ -7,8 +7,8 @@ package com.lychao163.dp.listen;
  */
 public class Main {
     public static void main(String[] args) {
-        EventEntity eventEntity = new EventEntity();
-        eventEntity.registerEventListener(new EventListenerImpl());
-        eventEntity.publishAction();
+        EventSubject eventSubject = new EventSubject();
+        eventSubject.registerEventListener(new EventListenerImpl());
+        eventSubject.publishAction();
     }
 }
