@@ -7,8 +7,8 @@ package com.lychao163.dp.observer;
  */
 public class Main {
     public static void main(String[] args) {
-        Observer observer1 = new ObserverImpl();
-        Observer observer2 = new ObserverImpl();
+        Observer observer1 = new ZhangSanObserverImpl();
+        Observer observer2 = new LiSiObserverImpl();
         Subject subject = new SubjectImpl();
         subject.registerObserver(observer1);
         subject.registerObserver(observer2);
